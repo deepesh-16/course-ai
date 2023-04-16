@@ -1,9 +1,7 @@
-import React from 'react'
-
-function Part1() {
-  return (
-    <div>Part1</div>
-  )
+const Part1 = () => {
+  return (  
+    <h2>Hello</h2>
+  );
 }
-
-export default Part1
+ 
+export default Part1;
