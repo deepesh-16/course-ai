@@ -9,3 +9,9 @@ There are currently systems that display a wide range of courses for a particula
 ## Objectives
 1. The main objective of our project is to help the user in selecting a course that is relevant to him/her.
 2. He/she should choose a course that suits his/her interests and matches the prerequisite knowledge so as to be able to adjust easily to the course curriculum.
+
+## Developers
+Gautham Mallipeddi
+Srinivasa Deepesh
+Akhilesh Kumandan
+Tapan Ganesh
