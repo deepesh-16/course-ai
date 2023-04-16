@@ -41,7 +41,7 @@ export default function Example() {
                       alt="Your Company"
                     />
                     <img
-                      className="hidden h-12 w-auto lg:block"
+                      className="hidden h-20 w-auto lg:block"
                       src={logo}
                       alt="Your Company"
                     />

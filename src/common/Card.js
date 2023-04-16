@@ -22,7 +22,7 @@ const CustomCard = ({ Title, rating, link }) => {
         <Card.Title>{Title}</Card.Title>
         <div className="mx-auto">
           <Card.Text>Course Rating : {rating}</Card.Text>
-          <Button variant={color} href={{ link }}>
+          <Button variant={color} target="_blank" href={ link }>
             {platform}
           </Button>
         </div>
