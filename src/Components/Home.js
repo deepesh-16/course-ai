@@ -1,11 +1,12 @@
 import React from 'react'
-import Part1 from './Home/Part1'
+import Landing from './Home/Landing/Landing'
+import Form from './Home/Form/Form'
 
 function Home() {
   return (
     <div>
-        <h1>Home</h1>
-        <Part1 />
+        <Landing />
+        <Form />
     </div>
   )
 }
