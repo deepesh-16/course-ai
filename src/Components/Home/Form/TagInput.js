@@ -37,7 +37,8 @@ function TagInput() {
 
     function handleClick() {
         const tagsArray = tags.map(item => item.text);
-        console.log(tagsArray);
+        // console.log(tagsArray);
+        window.alert(tagsArray);
     }
 
     return (
