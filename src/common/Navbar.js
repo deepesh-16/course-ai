@@ -3,7 +3,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../assets/courseAI-logo/cover.png'
 
 const navigation = [
-  { name: 'Home', href: '#', current: false },
+  // { name: 'Home', href: '#', current: false },
 //   { name: 'Team', href: '#', current: false },
 //   { name: 'Projects', href: '#', current: false },
 //   { name: 'Calendar', href: '#', current: false },
