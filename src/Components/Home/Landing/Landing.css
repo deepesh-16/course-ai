@@ -18,7 +18,7 @@
 .scrolling {
     line-height: 100px;   
     margin-bottom: 5px;
-    color: red;
+    color: #00242c;
 }
 @-moz-keyframes scroll {
     0% {
