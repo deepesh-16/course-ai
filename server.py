@@ -3,7 +3,9 @@ from pathlib import Path
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-root = Path("C:/Users/ksdee/Desktop/courseai/models")
+from flask import Flask,request,jsonify
+from flask_cors import CORS
+root = Path(r"C:\Users\Akhilesh\REACT\course-ai\models")
 file=root/'data.pkl'
 fileobj=open(file,'rb')
 domain=pickle.load(fileobj)
@@ -42,7 +44,7 @@ def domain_tosearch(words):
     return ans
 
 #Reading Data
-df= pd.read_csv('C:/Users/ksdee/Desktop/courseai/data/data_with_tags.csv')
+df= pd.read_csv(r'C:\Users\Akhilesh\REACT\course-ai\data\data_with_tags.csv')
  
 #Recommendation Function
 def get_recommendation_tfidf_cosinSim(user_record,data=df):
@@ -57,16 +59,31 @@ def get_recommendation_tfidf_cosinSim(user_record,data=df):
   # print('idx',idx)
   cosSim_scores=list(enumerate(cos_sim[idx]))
   cosSim_scores=sorted(cosSim_scores,key=lambda x:x[1],reverse=True)
-  cosSim_scores=cosSim_scores[1:16]
+  cosSim_scores=cosSim_scores[1:11]
   course_indices=[i[0] for i in cosSim_scores]
   df_new=df.iloc[course_indices]
   df_new=df_new.sort_values(by=['Stars'],ascending=False)
   return df_new
 
-id=df.shape[0]+1
-title='user_rec'+str(id)
-domains=domain_tosearch(['r','python','data science'])
-user_record={'Sno':id,'Title':title,'Stars':'0','Link':'none','tags':domains}
-print(df.shape)
-recommendations=get_recommendation_tfidf_cosinSim(user_record)
-print(recommendations)
+
+
+app = Flask(__name__)
+CORS(app)
+@app.route('/data',methods=["POST"])
+def predict():
+    tagsArray = request.get_json()
+    tagsArray = tagsArray["arg"]
+    print(tagsArray)
+    id=df.shape[0]+1
+    title='user_rec'+str(id)
+    domains=domain_tosearch(tagsArray)
+    print(domains)
+    user_record={'Sno':id,'Title':title,'Stars':'0','Link':'none','tags':domains}
+    # print(df.shape)
+    recommendations=get_recommendation_tfidf_cosinSim(user_record)
+    # print(recommendations)
+    return recommendations.to_dict(orient='records')
+    
+
+if __name__ == '__main__':
+    app.run(debug=True)
