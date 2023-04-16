@@ -73,6 +73,8 @@ function TagInput() {
             handleTagClick={handleTagClick}
             inputFieldPosition="bottom"
             autocomplete
+            placeholder="Enter skills separated by ,"
+            autofocus={false}
           />
         </div>
         <button
