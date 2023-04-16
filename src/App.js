@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from './common/Navbar'
 
 function App() {
   return (
     <div>
-      <h1 className='text-red-600'>Course AI</h1>
+      <Navbar />
     </div>
   );
 }
