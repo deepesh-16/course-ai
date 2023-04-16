@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { WithContext as ReactTags } from 'react-tag-input';
-import { render } from 'react-dom';
 import './TagInput.css';
 
 const KeyCodes = {
@@ -37,7 +36,8 @@ function TagInput() {
 
     function handleClick() {
         const tagsArray = tags.map(item => item.text);
-        console.log(tagsArray);
+        // console.log(tagsArray);
+        window.alert(tagsArray);
     }
 
     return (

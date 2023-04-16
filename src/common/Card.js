@@ -1,8 +1,6 @@
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import LogosCoursera from "../assets/Cards/LogosCoursera";
 import LogosUdemy from "../assets/Cards/LogosUdemy";
-import SimpleIconsUdemy from "../assets/Cards/SimpleIconsUdemy";
 
 import Button from "react-bootstrap/Button";
 const CustomCard = ({ Title, rating, link }) => {
@@ -16,13 +14,13 @@ const CustomCard = ({ Title, rating, link }) => {
     console.log(color);
   }
   return (
-    <Card text={"dark"} style={{ width: "18rem" }} className="mb-2 custom">
+    <Card text={"dark"} style={{ width: "18rem" }} className="mb-2 custom hover:scale-125 hover:duration-150">
       <Card.Body>
         <Card.Text>{image}</Card.Text>
         <Card.Title>{Title}</Card.Title>
         <div className="mx-auto">
           <Card.Text>Course Rating : {rating}</Card.Text>
-          <Button variant={color} href={{ link }}>
+          <Button variant={color} target="_blank" href={ link }>
             {platform}
           </Button>
         </div>
