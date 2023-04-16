@@ -18,8 +18,11 @@
 }
 
 .ReactTags__tag {
+    background-color: #82e292 !important;
+    border-radius: 20px !important;
+    padding: 5px !important;
     font-size: 15px !important;
-    background: #00242c !important;
+    color: #00242c !important;
     border-color: #82e292 !important;
 }
 
@@ -59,6 +62,7 @@
 }
 
 .ReactTags__remove{
+    color: #00242c !important;
     padding: 5px !important;
 }
 
