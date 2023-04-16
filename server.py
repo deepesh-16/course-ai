@@ -59,7 +59,7 @@ def get_recommendation_tfidf_cosinSim(user_record,data=df):
   # print('idx',idx)
   cosSim_scores=list(enumerate(cos_sim[idx]))
   cosSim_scores=sorted(cosSim_scores,key=lambda x:x[1],reverse=True)
-  cosSim_scores=cosSim_scores[1:11]
+  cosSim_scores=cosSim_scores[1:16]
   course_indices=[i[0] for i in cosSim_scores]
   df_new=df.iloc[course_indices]
   df_new=df_new.sort_values(by=['Stars'],ascending=False)

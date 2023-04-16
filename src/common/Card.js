@@ -14,7 +14,7 @@ const CustomCard = ({ Title, rating, link }) => {
     console.log(color);
   }
   return (
-    <Card text={"dark"} style={{ width: "18rem" }} className="mb-2 custom hover:scale-125 hover:duration-150">
+    <Card text={"dark"} style={{ width: "18rem" , height:"15rem"}} className="mb-2 custom hover:scale-100 hover:duration-150">
       <Card.Body>
         <Card.Text>{image}</Card.Text>
         <Card.Title>{Title}</Card.Title>
