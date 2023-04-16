@@ -38,6 +38,8 @@ function TagInput() {
   };
 
   const handleClick = async () => {
+    setData([])
+
     const tagsArray = tags.map((item) => item.text);
     setActive(true);
     console.log(JSON.stringify({ arg: tagsArray }));
@@ -55,6 +57,7 @@ function TagInput() {
     // );
     console.log(jsonData);
     setData(jsonData);
+
   };
 
   return (
