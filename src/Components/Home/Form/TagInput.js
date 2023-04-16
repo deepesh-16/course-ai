@@ -38,7 +38,7 @@ function TagInput() {
   };
 
   const handleClick = async () => {
-    setData([])
+    setData([]);
 
     const tagsArray = tags.map((item) => item.text);
     setActive(true);
@@ -57,7 +57,6 @@ function TagInput() {
     // );
     console.log(jsonData);
     setData(jsonData);
-
   };
 
   return (
@@ -74,6 +73,8 @@ function TagInput() {
             handleTagClick={handleTagClick}
             inputFieldPosition="bottom"
             autocomplete
+            placeholder="Enter skills separated by ,"
+            autofocus={false}
           />
         </div>
         <button
