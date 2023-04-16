@@ -1,9 +1,9 @@
 import CustomCard from "../common/Card";
 const About = () => {
   return (
-    <div className="container mt-3 main-div">
-      <div className="Recommender">
-        <h1 className="header h2">Course Recommender System</h1>
+    <div className="container mt-3 text-white bg-[#00242c] min-h-screen">
+      <div className="Recommender mb-5">
+        <h1 className="header h2 ">Course Recommender System</h1>
         <p>
           Recommender System is a software system that provides specific
           suggestions to users according to their preferences. These techniques
@@ -13,7 +13,7 @@ const About = () => {
         </p>
       </div>
       <div>
-        <h4>
+        <h4 className="mb-5">
           Based on your preferences , your recommendations will be shown to you
           as such :
         </h4>
