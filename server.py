@@ -48,12 +48,13 @@ df= pd.read_csv(r'C:\Users\Akhilesh\REACT\course-ai\data\data_with_tags.csv')
  
 #Recommendation Function
 def get_recommendation_tfidf_cosinSim(user_record,data=df):
-  df.loc[len(df)]=user_record
+  df1=df
+  df1.loc[len(df1)]=user_record
   tfv= TfidfVectorizer(min_df=3, max_features=None, strip_accents='unicode',analyzer='word',token_pattern=r'\w{1,}',ngram_range=(1,3),stop_words='english')
-  df['tags']=df['tags'].fillna('')
-  tfv_matrix=tfv.fit_transform(df['tags'])
+  df1['tags']=df1['tags'].fillna('')
+  tfv_matrix=tfv.fit_transform(df1['tags'])
   cos_sim=cosine_similarity(tfv_matrix,tfv_matrix)
-  indices=pd.Series(df.index,index=df['Title']).drop_duplicates()
+  indices=pd.Series(df1.index,index=df1['Title']).drop_duplicates()
   idx=indices[user_record['Title']]
   # print('title',user_record['Title'])
   # print('idx',idx)
@@ -61,9 +62,9 @@ def get_recommendation_tfidf_cosinSim(user_record,data=df):
   cosSim_scores=sorted(cosSim_scores,key=lambda x:x[1],reverse=True)
   cosSim_scores=cosSim_scores[1:16]
   course_indices=[i[0] for i in cosSim_scores]
-  df_new=df.iloc[course_indices]
-  df_new=df_new.sort_values(by=['Stars'],ascending=False)
-  return df_new
+  df1_new=df1.iloc[course_indices]
+  df1_new=df1_new.sort_values(by=['Stars'],ascending=False)
+  return df1_new
 
 
 
