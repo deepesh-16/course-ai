@@ -11,7 +11,7 @@ There are currently systems that display a wide range of courses for a particula
 2. He/she should choose a course that suits his/her interests and matches the prerequisite knowledge so as to be able to adjust easily to the course curriculum.
 
 ## Developers
-Gautham Mallipeddi
+Gautham Mallipeddi <br>
 Srinivasa Deepesh
 Akhilesh Kumandan
 Tapan Ganesh
