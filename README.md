@@ -12,6 +12,6 @@ There are currently systems that display a wide range of courses for a particula
 
 ## Developers
 Gautham Mallipeddi <br>
-Srinivasa Deepesh
-Akhilesh Kumandan
-Tapan Ganesh
+Srinivasa Deepesh <br>
+Akhilesh Kumandan <br>
+Tapan Ganesh <br>
