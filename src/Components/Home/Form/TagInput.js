@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { WithContext as ReactTags } from 'react-tag-input';
-import { render } from 'react-dom';
 import './TagInput.css';
 
 const KeyCodes = {

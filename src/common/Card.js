@@ -1,8 +1,6 @@
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import LogosCoursera from "../assets/Cards/LogosCoursera";
 import LogosUdemy from "../assets/Cards/LogosUdemy";
-import SimpleIconsUdemy from "../assets/Cards/SimpleIconsUdemy";
 
 import Button from "react-bootstrap/Button";
 const CustomCard = ({ Title, rating, link }) => {
