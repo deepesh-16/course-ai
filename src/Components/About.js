@@ -1,8 +1,8 @@
 import CustomCard from "../common/Card";
 const About = () => {
   return (
-    <div className="container mt-10 text-white bg-[#00242c] min-h-screen">
-      <div className="Recommender mb-5">
+    <div className="container mt-10 text-white bg-[#00242c] min-h-screen pb-3">
+      <div className="Recommender">
         <h1 className="header text-5xl italic pt-8 pb-4">Course Recommender System</h1>
         <div className=' flex flex-col space-y-8 md:flex-row md:space-y-0  md:space-x-8'>
           <p className="text-xl flex-auto italic">

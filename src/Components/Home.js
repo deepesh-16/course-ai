@@ -4,7 +4,7 @@ import Form from './Home/Form/Form'
 
 function Home() {
   return (
-    <div>
+    <div className='bg-[#00242c] min-h-screen'>
         <Landing />
         <Form />
     </div>

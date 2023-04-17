@@ -62,7 +62,7 @@ function TagInput() {
   return (
     <div>
       <div className="tag-inp">
-        <h1 className="text-white text-5xl pb-4"> Skills </h1>
+        <h1 className="text-white text-5xl pb-4">Enter your Skills </h1>
         <div>
           <ReactTags
             tags={tags}
