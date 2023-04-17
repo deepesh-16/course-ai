@@ -1,9 +1,9 @@
 import React from "react";
 import { WithContext as ReactTags } from "react-tag-input";
 import "./TagInput.css";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CustomCard from "../../../common/Card";
+import Loader from "./Loader";
 const KeyCodes = {
   comma: 188,
   enter: 13,
@@ -36,7 +36,7 @@ function TagInput() {
   const handleTagClick = (index) => {
     console.log("The tag at index " + index + " was clicked");
   };
-
+  // handlec Click , it sets the data using useState hook as well as fetches from the server.py
   const handleClick = async () => {
     setData([]);
 
@@ -52,15 +52,13 @@ function TagInput() {
     });
 
     const jsonData = await response.json();
-    // const new_data = jsonData.filter(
-    //   (rec) => rec.Title.substr(0, 8) != "user_rec"
-    // );
     console.log(jsonData);
     setData(jsonData);
   };
 
   return (
     <div>
+      {/* Skills animation and input field */}
       <div className="tag-inp">
         <h1 className="text-white text-5xl pb-4">Enter your Skills </h1>
         <div>
@@ -85,6 +83,7 @@ function TagInput() {
         </button>
       </div>
       <div className="p-3">
+        {/* After data is loaded to the useState */}
         {data.length > 0 && active && (
           <div className="text-white">
             <h2 className="text-white text-5xl pb-4">
@@ -103,21 +102,12 @@ function TagInput() {
             </div>
           </div>
         )}
-        {active && data.length === 0 && (
-          <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto mt-5">
-            <div class="animate-pulse flex space-x-4">
-              <div class="rounded-full bg-slate-700 h-10 w-10"></div>
-              <div class="flex-1 space-y-6 py-1">
-                <div class="h-2 bg-slate-700 rounded"></div>
-                <div class="space-y-3">
-                  <div class="grid grid-cols-3 gap-4">
-                    <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                    <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                  </div>
-                  <div class="h-2 bg-slate-700 rounded"></div>
-                </div>
-              </div>
-            </div>
+        {/* Loading animation */}
+        { active && data.length === 0 && (
+          <div className="flex justify-content-evenly" >
+            <Loader />
+            <Loader />
+            <Loader />
           </div>
         )}
       </div>

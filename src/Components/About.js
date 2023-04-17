@@ -1,4 +1,3 @@
-import CustomCard from "../common/Card";
 const About = () => {
   return (
     <div className="container mt-10 text-white bg-[#00242c] min-h-screen pb-3">

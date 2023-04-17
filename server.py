@@ -56,8 +56,6 @@ def get_recommendation_tfidf_cosinSim(user_record,data=df):
   cos_sim=cosine_similarity(tfv_matrix,tfv_matrix)
   indices=pd.Series(df1.index,index=df1['Title']).drop_duplicates()
   idx=indices[user_record['Title']]
-  # print('title',user_record['Title'])
-  # print('idx',idx)
   cosSim_scores=list(enumerate(cos_sim[idx]))
   cosSim_scores=sorted(cosSim_scores,key=lambda x:x[1],reverse=True)
   cosSim_scores=cosSim_scores[1:16]
@@ -80,9 +78,7 @@ def predict():
     domains=domain_tosearch(tagsArray)
     print(domains)
     user_record={'Sno':id,'Title':title,'Stars':'0','Link':'none','tags':domains}
-    # print(df.shape)
     recommendations=get_recommendation_tfidf_cosinSim(user_record)
-    # print(recommendations)
     return recommendations.to_dict(orient='records')
     
 
