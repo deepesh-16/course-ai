@@ -33,6 +33,8 @@ def domain_tosearch(words):
     dict_score=sorted(dict_score.items(),key=sort_by_val,reverse=True)
     dict_score={k:v for k,v in dict_score}
     dict_score=dict(itertools.islice(dict_score.items(), 10))
+    if list(dict_score.values())[0] <=0.01:
+        return ""
     final_domain=[]
     for key in dict_score:
         final_domain.extend(domain[key])
@@ -45,11 +47,11 @@ def domain_tosearch(words):
     return ans
 
 #Reading Data
-df= pd.read_csv('./data/data_with_tags.csv')
+
  
 #Recommendation Function
-def get_recommendation_tfidf_cosinSim(user_record,data=df):
-  df1=df
+def get_recommendation_tfidf_cosinSim(user_record):
+  df1= pd.read_csv('./data/data_with_tags.csv')
   df1.loc[len(df1)]=user_record
   tfv= TfidfVectorizer(min_df=3, max_features=None, strip_accents='unicode',analyzer='word',token_pattern=r'\w{1,}',ngram_range=(1,3),stop_words='english')
   df1['tags']=df1['tags'].fillna('')
@@ -74,10 +76,14 @@ def predict():
     tagsArray = request.get_json()
     tagsArray = tagsArray["arg"]
     print(tagsArray)
-    id=df.shape[0]+1
+    # id=df.shape[0]+1
+    id=-1
     title='user_rec'+str(id)
     domains=domain_tosearch(tagsArray)
     print(domains)
+    if domains=="":
+        dict={}
+        return json.dumps(dict)
     user_record={'Sno':id,'Title':title,'Stars':'0','Link':'none','tags':domains}
     recommendations=get_recommendation_tfidf_cosinSim(user_record)
     return json.dumps(recommendations.to_dict(orient='records'))
