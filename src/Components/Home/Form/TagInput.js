@@ -12,7 +12,7 @@ const KeyCodes = {
 const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 function TagInput() {
-  const [empty,setEmpty]=useState(false)
+  const [empty, setEmpty] = useState(false);
   const [data, setData] = useState([]);
   const [tags, setTags] = useState([]);
   const [active, setActive] = useState(false);
@@ -53,8 +53,8 @@ function TagInput() {
     });
 
     const jsonData = await response.json();
-    if(jsonData.length===undefined)setEmpty(true)
-    console.log(empty)
+    if (jsonData.length === undefined) setEmpty(true);
+    console.log(empty);
     console.log(jsonData);
     setData(jsonData);
   };
@@ -104,14 +104,15 @@ function TagInput() {
             </div>
           </div>
         )}
-        {
-          empty && (
-            <div className='text-3xl text-red-500 font-semibold text-center'>Enter Valid Prerequisites</div>
-          )
-        }
+        {empty && (
+          <div className="text-3xl text-red-500 font-semibold text-center">
+            Enter Valid Prerequisites
+          </div>
+        )}
         {/* Loading animation */}
-        { active && data.length === 0 && (
-          <div className="flex justify-content-evenly" >
+        {active && data.length === 0 && (
+          <div className="flex justify-content-evenly">
+            <Loader />
             <Loader />
             <Loader />
             <Loader />

@@ -51,7 +51,7 @@ def domain_tosearch(words):
  
 #Recommendation Function
 def get_recommendation_tfidf_cosinSim(user_record):
-  df1= pd.read_csv('./data/data_with_tags.csv')
+  df1= pd.read_csv('./data/dropped_data_with_tags.csv')
   df1.loc[len(df1)]=user_record
   tfv= TfidfVectorizer(min_df=3, max_features=None, strip_accents='unicode',analyzer='word',token_pattern=r'\w{1,}',ngram_range=(1,3),stop_words='english')
   df1['tags']=df1['tags'].fillna('')
