@@ -5,7 +5,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask,request,jsonify
 from flask_cors import CORS
-root = Path(r"C:\Users\Akhilesh\REACT\course-ai\models")
+import json
+root = Path("./models")
 file=root/'data.pkl'
 fileobj=open(file,'rb')
 domain=pickle.load(fileobj)
@@ -44,7 +45,7 @@ def domain_tosearch(words):
     return ans
 
 #Reading Data
-df= pd.read_csv(r'C:\Users\Akhilesh\REACT\course-ai\data\data_with_tags.csv')
+df= pd.read_csv('./data/data_with_tags.csv')
  
 #Recommendation Function
 def get_recommendation_tfidf_cosinSim(user_record,data=df):
@@ -79,7 +80,7 @@ def predict():
     print(domains)
     user_record={'Sno':id,'Title':title,'Stars':'0','Link':'none','tags':domains}
     recommendations=get_recommendation_tfidf_cosinSim(user_record)
-    return recommendations.to_dict(orient='records')
+    return json.dumps(recommendations.to_dict(orient='records'))
     
 
 if __name__ == '__main__':
