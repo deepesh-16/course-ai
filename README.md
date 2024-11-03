@@ -15,3 +15,11 @@ Gautham Mallipeddi <br>
 Srinivasa Deepesh <br>
 Akhilesh Kumandan <br>
 Tapan Ganesh <br>
+
+## Running it locally
+```
+pip install -r requirements.txt
+python server.py
+npm i --force
+npm start
+```

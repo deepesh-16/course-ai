@@ -44,7 +44,7 @@ function TagInput() {
     const tagsArray = tags.map((item) => item.text);
     setActive(true);
     console.log(JSON.stringify({ arg: tagsArray }));
-    const response = await fetch("http://localhost:5000/data", {
+    const response = await fetch("http://localhost:4000/data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
